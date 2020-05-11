@@ -1,0 +1,83 @@
+@charset "EUC-KR";
+
+body{
+	background-image : url('bg_image.jpg');
+	background-repeat : no-repeat;
+	background-size : cover;
+	font-family:"Lucida Console";
+}
+	
+#sub{
+	font-size:50px;
+	color:black;
+	font-weight:bold;
+	text-align:center;
+}
+	
+#box{
+	width:540px;
+	height:540px;
+	background-color:rgba(255,255,255,0.5);
+	left:50%;
+	transform:translateX(-50%);
+	position:relative;
+	border:10px double #65C992;
+	border-radius:10px;
+}
+
+#score_table{
+	margin:auto;
+	width:540px;
+	text-align:center;
+	color:black;
+	font-size:30px;
+	font-weight:bold;
+}
+
+#timer{
+	text-align:center;
+	color:black;
+	font-size:30px;
+}
+	
+button,
+button::after {
+	-webkit-transition: all 0.1s;
+	-moz-transition: all 0.1s;
+	-o-transition: all 0.1s;
+	transition: all 0.1s;
+}
+		
+button {
+	background: none;
+	border: none;
+	border-radius: 1px;
+	color: #fff;
+	opacity:0.5;
+	display: block;
+	font-size: 10px;
+	font-weight: bold;
+	margin: 1em auto;
+	text-transform: uppercase;
+}
+		
+button::before,
+button::after {
+  background: black;
+  content: '';
+  position: absolute;
+  z-index: -1;
+}
+		
+button:hover {
+  color: white;
+}
+#btn::after {
+  height: 0;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+}
+#btn:hover:after {
+  height: 100%;
+}

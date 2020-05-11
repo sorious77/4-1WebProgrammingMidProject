@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="EUC-KR" />
+    <title>Game</title>
+    <link rel="stylesheet" sype="text/css" href="game_style.css" />
+    <script type="text/JavaScript">
+      var randTop = 0;
+      var randLeft = 0;
+      var time = 14;
+      var sec = "";
+      var score = 0;
+
+      window.onload = function () { // 버튼의 초기 위치 지정
+      	var btId = document.getElementById("btn");
+
+      	randTop = Math.floor(Math.random() * 510);
+      	randLeft = Math.floor(Math.random() * 490);
+      	btId.style.left = randLeft + 'px';
+      	btId.style.top = randTop + 'px';
+      	btId.style.background = 'black';
+      }
+
+      var x = setInterval(function(){ // 타이머 기능
+      	sec = time%60;
+
+      	document.getElementById("timer").innerHTML = sec;
+      	time--;
+
+      	if(time < 0){ // 게임이 종료되면
+      		clearInterval(x);
+      		alert('Time over!!!!');
+      		document.location.href="result.html?score=" + score;
+      	}
+      }, 1000);
+
+      function loc_change(){ // 버튼 클릭시 랜덤한 위치로 이동
+      	var btId = document.getElementById("btn");
+      	randTop = Math.floor(Math.random() * 510);
+      	randLeft = Math.floor(Math.random() * 490);
+      	btId.style.left = randLeft + 'px';
+      	btId.style.top = randTop + 'px';
+      	btId.style.background = 'none';
+      	score++;
+      	document.getElementById("score").innerHTML = score;
+      }
+    </script>
+  </head>
+  <body>
+    <p id="sub">Click Game</p>
+    <div id="box">
+      <button
+        id="btn"
+        onclick="loc_change()"
+        style="position: absolute; left: 0px; top: 0px;"
+      >
+        Click
+      </button>
+    </div>
+    <p />
+    <table id="score_table">
+      <tr>
+        <td width="135">score :</td>
+        <td id="score" width="135">0</td>
+        <td width="135">time :</td>
+        <td id="timer" width="135">15</td>
+      </tr>
+    </table>
+  </body>
+</html>

@@ -1,0 +1,110 @@
+@charset "EUC-KR";
+
+html,body{
+  height:100%;
+  background-image:url('bg_image.jpg');
+  background-repeat : no-repeat;
+  background-size : cover;
+}
+body{
+  text-align:center;
+}
+body:before{
+  content:'';
+  height:100%;
+  display:inline-block;
+  vertical-align:middle;
+}
+
+h1{
+	text-align:center;
+	font-size:50px;
+}
+
+#txt_box{
+  background:#fff;
+  color:black;
+  font-family:Lucida Console, "³ª´®°íµñ";
+  border:none;
+  position:relative;
+  height:300px;
+  width:600px;
+  font-size:18px;
+  padding:0 2em;
+  cursor:default;
+  transition:800ms ease all;
+  outline:none;
+  display:inline-block;
+  vertical-align:middle;
+  text-align:left;
+  border-radius:20px;
+  border:10px double #65C992;
+  background-color: rgba( 255, 255, 255, 0.5 );
+}
+#txt_box:before,#txt_box:after{
+  content:'';
+  position:absolute;
+  top:0;
+  right:0;
+  height:2px;
+  width:0;
+  background: #65C992;
+  transition:400ms ease all;
+}
+#txt_box:after{
+  right:inherit;
+  top:inherit;
+  left:0;
+  bottom:0;
+}
+
+button{
+	background-color:rgba(255,255,255,0.5);
+	color:#65C992;
+	position:absolute;
+	height:60px;
+	width:250px;
+	font-size : 1.6em;
+	padding:0 2em;
+	cursor:pointer;
+	transition:800ms ease all;
+	border:none;
+	left:32%;
+	bottom:10%;
+	text-align:center;
+	font-family:Lucida Console;
+}
+
+button:hover{
+	background:#fff;
+	color:#65C992;
+}
+
+button:before, button:after{
+  content:'';
+  position:absolute;
+  top:0;
+  right:0;
+  height:2px;
+  width:0;
+  background: #65C992;
+  transition:400ms ease all;
+}
+
+button:after{
+	right:inherit;
+	top:inherit;
+	left:0;
+	bottom:0;
+}
+
+
+button:hover:before,button:hover:after{
+	width:100%;
+	transition:800ms ease all;
+}
+
+p{
+	font-size:40px;
+	text-align:center;
+}
